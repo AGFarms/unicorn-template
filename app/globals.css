@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/**
+ * Brand tokens exposed as CSS variables.
+ * Override these on the `<html>` element (or in a fork's globals.css) to retheme.
+ */
+:root {
+  --color-bone: #f7f0ec;
+  --color-basalt: #0d0d0d;
+  --color-teal: #0e82cc;
+  --color-gold: #e8b228; /* TODO: confirm hex with designer */
+  --color-ramp-900: #0d0d0d;
+  --color-ramp-700: #2b2b2b;
+  --color-ramp-500: #6b6660;
+  --color-ramp-300: #c9c2bc;
+  --color-ramp-100: #f0e9e4;
+  --color-ramp-50: #f7f0ec;
+
+  --font-display: "Arizona", "Iowan Old Style", Georgia, serif;
+  --font-body: "Söhne", Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: "Berkeley Mono", "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-bone: var(--color-bone);
+  --color-basalt: var(--color-basalt);
+  --color-teal: var(--color-teal);
+  --color-gold: var(--color-gold);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html,
+body {
+  background: var(--color-bone);
+  color: var(--color-basalt);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--color-teal);
+  color: var(--color-bone);
+}
